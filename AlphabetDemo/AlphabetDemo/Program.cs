@@ -5,32 +5,46 @@ namespace AlphabetDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the alphabet printer. \n If you would like to print the alphabet, enter 1.\n If you would like to print the alphabet backwards, enter 2. \n If you would like to only print every 'nth' letter of the alphabet, enter 3. \n\n");
+            Console.WriteLine("Welcome to the alphabet printer. \n\n ");
 
-            int choice = Int32.Parse(Console.ReadLine());
-            switch (choice)
+            int i = 0;
+            do
             {
+                Console.WriteLine("\n\nIf you would like to print the alphabet, enter 1.\nIf you would like to print the alphabet backwards, enter 2. \nIf you would like to only print every 'nth' letter of the alphabet, enter 3. \n\nEnter 4 to exit the program.");
 
-                case 1:
+                int choice = Int32.Parse(Console.ReadLine());
 
-                    Console.WriteLine(PrintAlphabet());
-                    break;
+                if (choice == 4)
+                {
+                    i = choice;
+                    Console.WriteLine("Goodbye!");
+                }
+                else
+                {
+                    switch (choice)
+                    {
+                        case 1:
 
-                case 2:
-                    Console.WriteLine(PrintAlphabetBackwards());
-                    break;
+                            Console.WriteLine(PrintAlphabet());
+                            break;
 
-                case 3:
-                    Console.WriteLine("Enter a value for 'n' and this will now print every 'nth' letter of the alphabet. \n");
+                        case 2:
+                            Console.WriteLine(PrintAlphabetBackwards());
+                            break;
 
-                    int nth = Int32.Parse(Console.ReadLine());
+                        case 3:
+                            Console.WriteLine("Enter a value for 'n' and this will now print every 'nth' letter of the alphabet. \n");
 
-                    Console.WriteLine(PrintAlphabetSkipLetters(nth));
-                    break;
+                            int nth = Int32.Parse(Console.ReadLine());
 
-                default:
-                    break;
-            }
+                            Console.WriteLine(PrintAlphabetSkipLetters(nth));
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            } while (i != 4);
         }
 
         static string PrintAlphabet()
@@ -64,4 +78,3 @@ namespace AlphabetDemo
         }
     }
 }
-
