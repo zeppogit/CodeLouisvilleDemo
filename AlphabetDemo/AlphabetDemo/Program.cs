@@ -5,34 +5,39 @@ namespace AlphabetDemo
     {
         static void Main(string[] args)
         {
-            PrintAlphabet(); PrintAlphabetBackwards(); PrintAlphabetSkipOneLetter();
+            Console.WriteLine(PrintAlphabet());
+            Console.WriteLine(PrintAlphabetBackwards());
+            Console.WriteLine(PrintAlphabetSkipOneLetter());
         }
-        static void PrintAlphabet()
+
+        static string PrintAlphabet()
         {
             string alphabet = string.Empty;
             for (char alpha = 'A'; alpha <= 'Z'; alpha++)
             {
                 alphabet += alpha;
             }
-            Console.WriteLine(alphabet);
+            return alphabet;
         }
-        static void PrintAlphabetBackwards()
+
+        static string PrintAlphabetBackwards()
         {
             string alphabet = string.Empty;
             for (char alpha = 'Z'; alpha >= 'A'; alpha--)
             {
                 alphabet += alpha;
             }
-            Console.WriteLine(alphabet);
+            return alphabet;
         }
-        static void PrintAlphabetSkipOneLetter()
+
+        static string PrintAlphabetSkipOneLetter()
         {
             string alphabet = string.Empty;
             for (char alpha = 'A'; alpha <= 'Z'; alpha = (char)(alpha + 2))
             {
                 alphabet += alpha;
             }
-            Console.WriteLine(alphabet);
+            return alphabet;
         }
     }
 }
