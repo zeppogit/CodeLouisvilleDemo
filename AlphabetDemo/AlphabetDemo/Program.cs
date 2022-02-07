@@ -7,7 +7,7 @@ namespace AlphabetDemo
         {
             Console.WriteLine(PrintAlphabet());
             Console.WriteLine(PrintAlphabetBackwards());
-            Console.WriteLine(PrintAlphabetSkipOneLetter());
+            Console.WriteLine(PrintAlphabetSkipOneLetter(3));
         }
 
         static string PrintAlphabet()
@@ -30,10 +30,10 @@ namespace AlphabetDemo
             return alphabet;
         }
 
-        static string PrintAlphabetSkipOneLetter()
+        static string PrintAlphabetSkipOneLetter(int numSkipped)
         {
             string alphabet = string.Empty;
-            for (char alpha = 'A'; alpha <= 'Z'; alpha = (char)(alpha + 2))
+            for (char alpha = 'A'; alpha <= 'Z'; alpha = (char)(alpha + numSkipped))
             {
                 alphabet += alpha;
             }
